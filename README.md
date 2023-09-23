@@ -50,7 +50,7 @@ sudo make install
 ## clone this codes
 git clone https://github.com/lturing/dsol_pangolin
 cd dsol_pangolin
-mkdir build 
+mkdir build && cd build
 cmake .. && make -j12
 
 ## run dsol stereo on kitti00
