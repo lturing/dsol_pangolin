@@ -158,6 +158,6 @@ GTest::GTest
 # RGB-D examples
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/example)
 
-add_executable(dsol_kitti example/dsol_kitti.cpp)
-target_link_libraries(dsol_kitti ${PROJECT_NAME})
+add_executable(dsol_stereo_kitti example/dsol_stereo_kitti.cpp)
+target_link_libraries(dsol_stereo_kitti ${PROJECT_NAME})
 

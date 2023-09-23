@@ -1,4 +1,4 @@
-DSOL是一种适用于嵌入式芯片上的稀疏直接法的VO。相比官方的代码(ros)，我们用pangolin可视化。
+DSOL是一种适用于嵌入式芯片上的稀疏直接法的VO。相比官方的代码(ros)，我们用pangolin可视化。相比特征点法，直接法生成的三维点更稠密，更鲁棒。
 
 # run
 ```
@@ -48,16 +48,19 @@ sudo make install
 
 
 ## clone this codes
-git clone 
-cd 
+git clone https://github.com/lturing/dsol_pangolin
+cd dsol_pangolin
 mkdir build 
 cmake .. && make -j12
 
-## run kitti00
+## run dsol stereo on kitti00
 cd ..
-./example/dsol_kitti
+./example/dsol_stereo_kitti
 
 ```
+
+# demo 
+- [b站视频](https://www.bilibili.com/video/BV1tw411v7z4/)
 
 # todo 
 - add loop close 
