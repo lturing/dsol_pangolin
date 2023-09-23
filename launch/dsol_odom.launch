@@ -1,0 +1,28 @@
+<launch>
+    <arg name="debug" default="false"/>
+    <env if="$(arg debug)" name="ROSCONSOLE_CONFIG_FILE" value="$(find dsol)/launch/debug.conf"/>
+
+    <arg name="tbb" default="0"/>
+    <arg name="log" default="5"/>
+    <arg name="vis" default="0"/>
+
+    <arg name="camera" default="/camera"/>
+    <arg name="use_depth" default="false"/>
+
+    <node pkg="dsol" type="sv_dsol_node_odom" name="dsol_odom" output="screen">
+        <rosparam command="load" file="$(find dsol)/config/dsol.yaml"/>
+        <rosparam command="load" file="$(find dsol)/config/dsol_d455.yaml"/>
+
+        <param name="tbb" type="int" value="$(arg tbb)"/>
+        <param name="log" type="int" value="$(arg log)"/>
+        <param name="vis" type="int" value="$(arg vis)"/>
+        <param name="use_depth" type="bool" value="$(arg use_depth)"/>
+
+        <remap from="~cinfo0" to="$(arg camera)/infra1/camera_info"/>
+        <remap from="~cinfo1" to="$(arg camera)/infra2/camera_info"/>
+        <remap from="~image0" to="$(arg camera)/infra1/image_rect_raw"/>
+        <remap from="~image1" to="$(arg camera)/infra2/image_rect_raw"/>
+        <remap from="~depth0" to="$(arg camera)/depth/image_rect_raw"/>
+        <remap from="~gyr" to="$(arg camera)/gyro/sample"/>
+    </node>
+</launch>
