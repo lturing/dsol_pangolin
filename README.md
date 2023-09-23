@@ -62,6 +62,9 @@ cd ..
 # demo 
 - [b站视频](https://www.bilibili.com/video/BV1tw411v7z4/)
 
+<div align=center><img src="./demo.jpg" width="70%"/></div>
+
+
 # todo 
 - add loop close 
 - add imu
