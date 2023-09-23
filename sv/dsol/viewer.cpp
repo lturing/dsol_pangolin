@@ -130,6 +130,7 @@ namespace sv::dsol {
                 */
 
                 if (settings_showLiveVideo) {
+                    // https://github.com/stevenlovegrove/Pangolin/issues/682
                     glPixelStorei(GL_UNPACK_ALIGNMENT,1);
                     texVideo.Upload(frame.data, GL_BGR, GL_UNSIGNED_BYTE);
                     d_video.Activate();
